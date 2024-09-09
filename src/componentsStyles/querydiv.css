@@ -1,0 +1,90 @@
+#queryDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/*for the search bar part*/
+#searchDiv {
+  display: flex;
+  align-items: center;
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 4px;
+  width: 40%;
+  overflow: hidden;
+}
+
+#searchDiv p {
+  padding: 15px 7px 15px 27px;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 15px 20px;
+  color: inherit;
+}
+
+input::placeholder {
+  color: inherit;
+}
+
+/*for the filter part*/
+
+#filterDiv {
+  position: relative;
+}
+
+#filterBtn {
+  background-color: hsl(209, 23%, 22%);
+  padding: 15px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+#filterBtn p {
+    display: inline-block;
+}
+
+#filterBtn #downIcon {
+  font-size: 0.7rem;
+  margin-left: 50px;
+}
+
+#filterOptions {
+  position: absolute;
+  top: 58px;
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 4px;
+  padding: 15px 0;
+  width: 100%;
+  display: grid;
+  gap: 6px;
+}
+
+.filterOption {
+  padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+  /*for the search bar part*/
+  #searchDiv {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  /*for the search bar part*/
+  #queryDiv {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #searchDiv {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}

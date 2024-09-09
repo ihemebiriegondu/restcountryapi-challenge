@@ -1,10 +1,12 @@
 import React from "react";
 
+import sampleImg from '../abstract-flowing-neon-wave-background.jpg'
+
 export default function Countrycard() {
   return (
     <article>
-      <img alt="countryImg"></img>
-      <div>
+      <img src={sampleImg} alt="countryImg"></img>
+      <div className="cardContent">
         <h6>Germany</h6>
         <div>
           <p>

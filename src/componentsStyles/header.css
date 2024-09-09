@@ -1,0 +1,41 @@
+header {
+  background-color: hsl(209, 23%, 22%);
+  padding: 20px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+p span {
+    margin-left: 8px;
+}
+
+@media (max-width: 992px) {
+    header{
+        padding: 20px 4%;
+    }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
