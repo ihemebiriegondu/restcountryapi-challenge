@@ -5,35 +5,35 @@
   row-gap: 60px;
 }
 
-article {
+#displayContainer article {
   overflow: hidden;
   border-radius: 4px;
   background-color: hsl(209, 23%, 22%);
   width: 100%;
 }
 
-article img {
+#displayContainer article img {
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
-article .cardContent {
+#displayContainer article .cardContent {
   padding: 20px 20px 40px;
 }
 
-article .cardContent h6 {
+#displayContainer article .cardContent h6 {
   margin-bottom: 20px;
   font-size: 1.15rem;
   font-weight: 600;
 }
 
-article .cardContent p {
+#displayContainer article .cardContent p {
   margin-bottom: 5px;
   font-weight: 400;
 }
 
-article .cardContent span {
+#displayContainer article .cardContent span {
   font-weight: 300;
 }
 
