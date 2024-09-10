@@ -17,13 +17,15 @@ export default function Filter(props) {
 
     //for when the back button is clicked from the details page
     if (props.isFiltered) {
-      let filterOption = document.querySelector(".countryRegion").textContent;
-      document.getElementById("filterPlaceholder").textContent = filterOption;
-      document.querySelectorAll(".filterOption").forEach((option) => {
-        if (option.textContent === filterOption) {
-          props.setActiveOption(option.textContent);
-        }
-      });
+      let filterOption = document.querySelector(".countryRegion");
+      if (filterOption !== null) {
+        document.getElementById("filterPlaceholder").textContent = filterOption.textContent;
+        document.querySelectorAll(".filterOption").forEach((option) => {
+          if (option.textContent === filterOption.textContent) {
+            props.setActiveOption(option.textContent);
+          }
+        });
+      }
     }
   }, [props]);
 
@@ -53,6 +55,8 @@ export default function Filter(props) {
       props.setIsFiltered(true);
     }
 
+    document.getElementById("searchInput").value = "";
+    props.setSearchValue("");
     filterOptions.classList.remove("show");
   };
 

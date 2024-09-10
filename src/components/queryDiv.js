@@ -7,7 +7,12 @@ import "../componentsStyles/querydiv.css";
 export default function QueryDiv(props) {
   return (
     <section id="queryDiv">
-      <Searchbar />
+      <Searchbar
+        data={props.isFiltered ? props.filteredData : props.data}
+        searchValue={props.searchValue}
+        setSearchValue={props.setSearchValue}
+        setSearchedData={props.setSearchedData}
+      />
       <Filter
         data={props.data}
         activeOption={props.activeOption}
@@ -15,6 +20,7 @@ export default function QueryDiv(props) {
         isFiltered={props.isFiltered}
         setIsFiltered={props.setIsFiltered}
         setFilteredData={props.setFilteredData}
+        setSearchValue={props.setSearchValue}
       />
     </section>
   );
