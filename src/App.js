@@ -3,7 +3,7 @@ import DisplayContainer from "./components/displayContainer";
 import Header from "./components/header";
 import QueryDiv from "./components/queryDiv";
 
-let showDetails = true;
+let showDetails = false;
 
 function App() {
   return (

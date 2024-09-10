@@ -7,8 +7,8 @@ body {
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
-  background-color: hsl(207, 26%, 17%);
+  color: hsl(200, 15%, 8%);
+  background-color: hsl(0, 0%, 98%);
 }
 
 main {
@@ -17,6 +17,13 @@ main {
 
 p, h1, h2, h6 {
   margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: hsl(207, 26%, 17%);
+  }
 }
 
 @media (max-width: 992px) {

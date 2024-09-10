@@ -9,7 +9,7 @@
 #searchDiv {
   display: flex;
   align-items: center;
-  background-color: hsl(209, 23%, 22%);
+  background-color: white;
   border-radius: 4px;
   width: 40%;
   overflow: hidden;
@@ -29,7 +29,7 @@ input {
 }
 
 input::placeholder {
-  color: inherit;
+  color: hsl(209, 23%, 22%);
 }
 
 /*for the filter part*/
@@ -39,14 +39,18 @@ input::placeholder {
 }
 
 #filterBtn {
-  background-color: hsl(209, 23%, 22%);
+  background-color: white;
   padding: 15px 20px;
   border-radius: 4px;
   font-weight: 500;
 }
 
+#filterBtn:hover {
+  cursor: pointer;
+}
+
 #filterBtn p {
-    display: inline-block;
+  display: inline-block;
 }
 
 #filterBtn #downIcon {
@@ -57,16 +61,47 @@ input::placeholder {
 #filterOptions {
   position: absolute;
   top: 58px;
-  background-color: hsl(209, 23%, 22%);
+  background-color: white;
   border-radius: 4px;
   padding: 15px 0;
   width: 100%;
-  display: grid;
+  display: none;
   gap: 6px;
+}
+
+#filterOptions.show {
+  display: grid;
 }
 
 .filterOption {
   padding: 0 20px;
+  transition: background 0.6s;
+}
+
+.filterOption:hover {
+  background: hsla(208, 23%, 22%, 0.2);
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  #searchDiv {
+    background-color: hsl(209, 23%, 22%);
+  }
+  input::placeholder {
+    color: inherit;
+  }
+
+  #filterBtn {
+    background-color: hsl(209, 23%, 22%);
+  }
+
+  #filterOptions {
+    background-color: hsl(209, 23%, 22%);
+  }
+
+  .filterOption:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
 }
 
 @media (max-width: 992px) {

@@ -3,10 +3,17 @@
 }
 
 #detailsPage #backBtn {
-  background-color: hsl(209, 23%, 22%);
+  background-color: white;
   display: inline-block;
   padding: 10px 32px;
   border-radius: 4px;
+  box-shadow: 0.5px 0.5px 4px 1px rgba(180, 180, 180, 0.459);
+  transition: box-shadow 0.5s ease-in;
+}
+
+#detailsPage #backBtn:hover {
+  box-shadow: 0.5px 0.5px 4px 2px rgba(180, 180, 180, 0.459);
+  cursor: pointer;
 }
 
 #detailsPage #backbtn span {
@@ -70,9 +77,26 @@
 }
 
 #detailsPage article #borderCountries span {
-  background-color: hsl(209, 23%, 22%);
+  background-color: white;
   padding: 3px 20px;
   border-radius: 4px;
+  box-shadow: 1px 1px 4px 2px rgba(180, 180, 180, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  #detailsPage #backBtn {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0.5px 0.5px 4px 1px rgba(43, 42, 42, 0.459);
+  }
+
+  #detailsPage #backBtn:hover {
+    box-shadow: 0.5px 0.5px 4px 2px rgba(41, 41, 41, 0.459);
+  }
+
+  #detailsPage article #borderCountries span {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 1px 1px 4px 2px rgba(43, 42, 42, 0.4);
+  }
 }
 
 @media (max-width: 1200px) {

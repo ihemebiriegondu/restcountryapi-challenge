@@ -8,7 +8,8 @@
 #displayContainer article {
   overflow: hidden;
   border-radius: 4px;
-  background-color: hsl(209, 23%, 22%);
+  background-color: white;
+  box-shadow: 2px 2px 10px 2px rgba(180, 180, 180, 0.301);
   width: 100%;
 }
 
@@ -35,6 +36,13 @@
 
 #displayContainer article .cardContent span {
   font-weight: 300;
+}
+
+@media (prefers-color-scheme: dark) {
+  #displayContainer article {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 2px 2px 10px 2px rgba(26, 25, 25, 0.171);
+  }
 }
 
 @media (max-width: 1200px) {
