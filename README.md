@@ -5,16 +5,11 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [Built with](#built-with)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 ## Overview
@@ -52,5 +47,5 @@ Users should be able to:
 ## Author
 
 - Website - [Egondu](https://egonduihemebiri.vercel.app)
-- Frontend Mentor - [@ihemebiriegondu](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@ihemebiriegondu](https://www.frontendmentor.io/profile/ihemebiriegondu)
 - Twitter - [@egondu_i](https://twitter.com/egondu_i?s=09)
