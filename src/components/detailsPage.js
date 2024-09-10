@@ -4,50 +4,59 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import "../componentsStyles/detailsPages.css";
 
-import sampleImg from "../abstract-flowing-neon-wave-background.jpg";
+export default function DetailsPage(props) {
+  console.log(props.detailData);
 
-export default function DetailsPage() {
   return (
     <section id="detailsPage">
-      <p id="backBtn">
+      <p id="backBtn" onClick={() => props.setShowDetails(false)}>
         <FontAwesomeIcon icon={faArrowLeft} />
         <span>Back</span>
       </p>
       <article>
         <div>
-          <img src={sampleImg} alt="countryImg"></img>
+          <img src={props.detailData.flags.png} alt="countryImg"></img>
         </div>
 
         <aside>
-          <h1>Belgium</h1>
+          <h1>{props.detailData.name.common}</h1>
           <div id="infoDiv">
             <div id="countryInfoDiv">
               <div>
                 <p>
-                  Native Name: <span>Belgie</span>
+                  Native Name:
+                  <span>
+                    {Object.values(props.detailData.name.nativeName)[0].common}
+                  </span>
                 </p>
                 <p>
-                  Population: <span>Belgie</span>
+                  Population: <span>{props.detailData.population}</span>
                 </p>
                 <p>
-                  Region: <span>Belgie</span>
+                  Region: <span>{props.detailData.region}</span>
                 </p>
                 <p>
-                  Sub region: <span>Belgie</span>
+                  Sub region: <span>{props.detailData.subregion}</span>
                 </p>
                 <p>
-                  Capital: <span>Belgie</span>
+                  Capital: <span>{props.detailData.capital}</span>
                 </p>
               </div>
               <div>
                 <p>
-                  Top Level Domain: <span>Belgie</span>
+                  Top Level Domain: <span>{props.detailData.tld[0]}</span>
                 </p>
                 <p>
-                  Currencies: <span>Belgie</span>
+                  Currencies:{" "}
+                  <span>
+                    {Object.values(props.detailData.currencies)[0].name}
+                  </span>
                 </p>
                 <p>
-                  Languages: <span>Belgie</span>
+                  Languages:
+                  <span>
+                    {Object.values(props.detailData.languages).join(", ")}
+                  </span>
                 </p>
               </div>
             </div>

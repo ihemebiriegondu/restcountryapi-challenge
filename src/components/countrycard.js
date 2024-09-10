@@ -1,22 +1,21 @@
 import React from "react";
 
-import sampleImg from '../abstract-flowing-neon-wave-background.jpg'
-
-export default function Countrycard() {
+export default function Countrycard(props) {
   return (
-    <article>
-      <img src={sampleImg} alt="countryImg"></img>
+    <article onClick={props.showDetails}>
+      <div className="backdrop" id={props.countryFlag}></div>
+      <img src={props.countryFlag} alt="countryImg"></img>
       <div className="cardContent">
-        <h6>Germany</h6>
+        <h6>{props.countryName}</h6>
         <div>
           <p>
-            Population: <span>81,770,900</span>
+            Population: <span>{props.population}</span>
           </p>
           <p>
-            Region: <span>Europe</span>
+            Region: <span>{props.region}</span>
           </p>
           <p>
-            Capital: <span>Berlin</span>
+            Capital: <span>{props.capital}</span>
           </p>
         </div>
       </div>
