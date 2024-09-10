@@ -12,7 +12,7 @@ export default function Countrycard(props) {
             Population: <span>{props.population}</span>
           </p>
           <p>
-            Region: <span>{props.region}</span>
+            Region: <span className="countryRegion">{props.region}</span>
           </p>
           <p>
             Capital: <span>{props.capital}</span>

@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import "../componentsStyles/detailsPages.css";
 
 export default function DetailsPage(props) {
-  console.log(props.detailData);
+  const [borders, setBorders] = useState([]);
+
+  useEffect(() => {
+    if (props.detailData.borders) {
+      const bordersArray = [];
+
+      for (let j = 0; j < props.detailData.borders.length; j++) {
+        let borderAbbr = props.detailData.borders[j];
+        for (let i = 0; i < props.fullData.length; i++) {
+          if (borderAbbr === props.fullData[i].cca3) {
+            bordersArray.push(props.fullData[i].name.common);
+          }
+        }
+      }
+
+      setBorders(bordersArray);
+    }
+  }, [props.detailData.borders, props.fullData]);
 
   return (
     <section id="detailsPage">
@@ -14,7 +31,7 @@ export default function DetailsPage(props) {
         <span>Back</span>
       </p>
       <article>
-        <div>
+        <div className="flagDiv">
           <img src={props.detailData.flags.png} alt="countryImg"></img>
         </div>
 
@@ -60,14 +77,15 @@ export default function DetailsPage(props) {
                 </p>
               </div>
             </div>
-            <div id="borderCountriesDiv">
-              <p>Border Countries:</p>
-              <div id="borderCountries">
-                <span>France</span>
-                <span>France</span>
-                <span>France</span>
+            {props.detailData.borders && (
+              <div id="borderCountriesDiv">
+                <p>Border Countries:</p>
+                <div id="borderCountries">
+                  {borders &&
+                    borders.map((border, i) => <span key={i}>{border}</span>)}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </aside>
       </article>

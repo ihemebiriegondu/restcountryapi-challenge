@@ -74,6 +74,7 @@
 #detailsPage article #borderCountries {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 #detailsPage article #borderCountries span {

@@ -6,10 +6,15 @@ import Header from "./components/header";
 import QueryDiv from "./components/queryDiv";
 
 function App() {
+  const [activeOption, setActiveOption] = useState("");
+
+  const [data, setData] = useState([]);
+
   const [showDetails, setShowDetails] = useState(false);
   const [detailData, setDetailData] = useState([]);
 
-  const [data, setData] = useState([]);
+  const [isFiltered, setIsFiltered] = useState(false);
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     const fetchDataFunction = async () => {
@@ -37,14 +42,22 @@ function App() {
           <DetailsPage
             setShowDetails={setShowDetails}
             detailData={detailData}
+            fullData={data}
           />
         ) : (
           <section>
-            <QueryDiv />
+            <QueryDiv
+              data={data}
+              activeOption={activeOption}
+              setActiveOption={setActiveOption}
+              isFiltered={isFiltered}
+              setIsFiltered={setIsFiltered}
+              setFilteredData={setFilteredData}
+            />
             <DisplayContainer
               setShowDetails={setShowDetails}
               setDetailData={setDetailData}
-              countryData={data}
+              countryData={isFiltered ? filteredData : data}
             />
           </section>
         )}

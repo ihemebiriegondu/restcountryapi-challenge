@@ -24,6 +24,7 @@
 #displayContainer article .backdrop {
   position: absolute;
   inset: 0;
+  z-index: 1;
 }
 
 #displayContainer article img {
