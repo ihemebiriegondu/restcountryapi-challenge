@@ -7,11 +7,32 @@ header {
   box-shadow: 0 1px 1px 2px rgba(158, 158, 158, 0.2);
 }
 
-#moonLight, #lightMode {
+body.dark header {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 1px 1px 2px rgba(17, 17, 17, 0.2);
+}
+
+#modeChanger:hover {
+  cursor: pointer;
+}
+
+body.dark #moonLight,
+body.dark #lightMode {
+  display: none;
+}
+
+#moonLight,
+#lightMode {
   display: inline-block;
 }
 
-#moonDark, #darkMode {
+body.dark #moonDark,
+body.dark #darkMode {
+  display: inline-block;
+}
+
+#moonDark,
+#darkMode {
   display: none;
 }
 
@@ -26,21 +47,6 @@ p {
 
 p span {
   margin-left: 8px;
-}
-
-@media (prefers-color-scheme: dark) {
-  header {
-    background-color: hsl(209, 23%, 22%);
-    box-shadow: 0 1px 1px 2px rgba(17, 17, 17, 0.2);
-  }
-
-  #moonDark, #darkMode {
-    display: inline-block;
-  }
-
-  #moonLight, #lightMode {
-    display: none;
-  }
 }
 
 @media (max-width: 992px) {

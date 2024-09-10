@@ -15,7 +15,7 @@ export default function Countrycard(props) {
             Region: <span className="countryRegion">{props.region}</span>
           </p>
           <p>
-            Capital: <span>{props.capital}</span>
+            Capital: <span>{props.capital && props.capital.join(", ")}</span>
           </p>
         </div>
       </div>

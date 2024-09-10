@@ -17,7 +17,6 @@ export default function DisplayContainer(props) {
     
     props.setShowDetails(true);
   };
-  console.log(countryData)
 
   return (
     <section id="displayContainer">

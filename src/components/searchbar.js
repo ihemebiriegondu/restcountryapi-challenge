@@ -4,14 +4,12 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyin
 
 export default function Searchbar(props) {
   const updateSearch = (event) => {
-    console.log(props.data);
     let searchValue = event.target.value;
     const searchedData = props.data.filter((data) =>
       data.name.common.toLowerCase().includes(searchValue.toLowerCase())
     );
 
     props.setSearchedData(searchedData);
-    console.log(searchedData);
     if (searchedData.length > 0) {
       props.setSearchValue(event.target.value);
     }

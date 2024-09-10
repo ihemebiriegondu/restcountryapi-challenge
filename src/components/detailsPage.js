@@ -31,7 +31,7 @@ export default function DetailsPage(props) {
         <span>Back</span>
       </p>
       <article>
-        <div className="flagDiv">
+        <div id="flagDiv">
           <img src={props.detailData.flags.png} alt="countryImg"></img>
         </div>
 
@@ -43,7 +43,8 @@ export default function DetailsPage(props) {
                 <p>
                   Native Name:
                   <span>
-                    {Object.values(props.detailData.name.nativeName)[0].common}
+                    {props.detailData.name.nativeName &&
+                      Object.values(props.detailData.name.nativeName)[0].common}
                   </span>
                 </p>
                 <p>
@@ -61,12 +62,14 @@ export default function DetailsPage(props) {
               </div>
               <div>
                 <p>
-                  Top Level Domain: <span>{props.detailData.tld[0]}</span>
+                  Top Level Domain:{" "}
+                  <span>{props.detailData.tld && props.detailData.tld[0]}</span>
                 </p>
                 <p>
                   Currencies:{" "}
                   <span>
-                    {Object.values(props.detailData.currencies)[0].name}
+                    {props.detailData.currencies &&
+                      Object.values(props.detailData.currencies)[0].name}
                   </span>
                 </p>
                 <p>

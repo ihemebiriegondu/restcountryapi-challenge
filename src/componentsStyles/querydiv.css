@@ -15,6 +15,10 @@
   overflow: hidden;
 }
 
+body.dark #searchDiv {
+  background-color: hsl(209, 23%, 22%);
+}
+
 #searchDiv p {
   padding: 15px 7px 15px 27px;
 }
@@ -32,6 +36,10 @@ input::placeholder {
   color: hsl(209, 23%, 22%);
 }
 
+body.dark input::placeholder {
+  color: inherit;
+}
+
 /*for the filter part*/
 
 #filterDiv {
@@ -47,6 +55,10 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+body.dark #filterBtn {
+  background-color: hsl(209, 23%, 22%);
 }
 
 #filterBtn:hover {
@@ -73,6 +85,10 @@ input::placeholder {
   gap: 6px;
 }
 
+body.dark #filterOptions {
+  background-color: hsl(209, 23%, 22%);
+}
+
 #filterOptions.show {
   display: grid;
 }
@@ -86,34 +102,17 @@ input::placeholder {
   background-color: hsla(208, 23%, 22%, 0.2);
 }
 
+body.dark .filterOption.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .filterOption:hover {
   background: hsla(208, 23%, 22%, 0.2);
   cursor: pointer;
 }
 
-@media (prefers-color-scheme: dark) {
-  #searchDiv {
-    background-color: hsl(209, 23%, 22%);
-  }
-  input::placeholder {
-    color: inherit;
-  }
-
-  #filterBtn {
-    background-color: hsl(209, 23%, 22%);
-  }
-
-  #filterOptions {
-    background-color: hsl(209, 23%, 22%);
-  }
-
-  .filterOption.active {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .filterOption:hover {
-    background: rgba(255, 255, 255, 0.3);
-  }
+body.dark .filterOption:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 992px) {
