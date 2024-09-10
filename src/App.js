@@ -41,7 +41,7 @@ function App() {
     return () => {
       fetchDataFunction();
     };
-  }, []);
+  }, [data]);
 
   return (
     <div className="App">
