@@ -21,12 +21,9 @@ function App() {
   useEffect(() => {
     const fetchDataFunction = async () => {
       try {
-        const response = await fetch("https://restcountries.com/v3.1/all", {
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "https://corsproxy.io/?https://restcountries.com/v3.1/all"
+        );
         const data = await response.json();
 
         setData(data);
