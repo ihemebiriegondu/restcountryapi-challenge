@@ -19,7 +19,7 @@ function App() {
   const [searchedData, setSearchedData] = useState([]);
 
   useEffect(() => {
-    const fetchDataFunction = async () => {
+    /*const fetchDataFunction = async () => {
       try {
         const response = await fetch(`https://restcountries.com/v3.1/all`, {
           method: "GET",
@@ -36,6 +36,21 @@ function App() {
       } catch (error) {
         console.log(error);
       }
+    };*/
+
+    const fetchDataFunction = () => {
+      fetch("https://api.apis.guru/v2/list.json")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setData('');
+        })
+        .catch((error) => console.error("Error fetching data:", error));
     };
 
     if (
