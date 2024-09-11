@@ -22,12 +22,14 @@ function App() {
   useEffect(() => {
     const fetchDataFunction = async () => {
       try {
-        const response = await axios.get(
-          `https://corsproxy.io/get?url=${encodeURIComponent(
-            "https://restcountries.com/v3.1/all"
-          )}`
+        const response = await fetch(
+          `https://corsproxy.io/?https%3A%2F%2Frestcountries.com%2Fv3.1%2Fall`,
+          {
+            mode: "cors",
+          }
         );
-        const data = response.data;
+        const data = await response.json();
+
         setData(data);
         console.log(response);
       } catch (error) {
