@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 import DetailsPage from "./components/detailsPage";
 import DisplayContainer from "./components/displayContainer";
@@ -21,10 +22,10 @@ function App() {
   useEffect(() => {
     const fetchDataFunction = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get(
           "https://corsproxy.io/?https://restcountries.com/v3.1/all"
         );
-        const data = await response.json();
+        const data = response.data;
 
         setData(data);
         console.log(response);
