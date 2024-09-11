@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 import DetailsPage from "./components/detailsPage";
 import DisplayContainer from "./components/displayContainer";
@@ -22,12 +21,14 @@ function App() {
   useEffect(() => {
     const fetchDataFunction = async () => {
       try {
-        const response = await fetch(
-          `https://corsproxy.io/?https%3A%2F%2Frestcountries.com%2Fv3.1%2Fall`,
-          {
-            mode: "cors",
-          }
-        );
+        const response = await fetch(`https://restcountries.com/v3.1/all`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin":
+              "https://restcountryapi-challenge.vercel.app",
+          },
+        });
         const data = await response.json();
 
         setData(data);
