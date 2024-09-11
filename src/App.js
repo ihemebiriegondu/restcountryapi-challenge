@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const fetchDataFunction = async () => {
       try {
-        const response = await axios.get("https://corsproxy.io/?https://restcountries.com/v3.1/all");
+        const response = await axios.get("https://restcountries.com/v3.1/all");
         const data = response.data;
 
         setData(data);
