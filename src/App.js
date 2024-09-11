@@ -22,9 +22,12 @@ function App() {
   useEffect(() => {
     const fetchDataFunction = async () => {
       try {
-        const response = await axios.get("https://restcountries.com/v3.1/all");
+        const response = await axios.get(
+          `https://corsproxy.io/get?url=${encodeURIComponent(
+            "https://restcountries.com/v3.1/all"
+          )}`
+        );
         const data = response.data;
-
         setData(data);
         console.log(response);
       } catch (error) {
@@ -42,7 +45,7 @@ function App() {
     return () => {
       fetchDataFunction();
     };
-  }, [data]);
+  }, []);
 
   return (
     <div className="App">
