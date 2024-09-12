@@ -4,10 +4,9 @@ import DetailsPage from "./components/detailsPage";
 import DisplayContainer from "./components/displayContainer";
 import Header from "./components/header";
 import QueryDiv from "./components/queryDiv";
+import countryDatas from "./data.json";
 
 function App() {
-  const [data, setData] = useState([]);
-
   const [showDetails, setShowDetails] = useState(false);
   const [detailData, setDetailData] = useState([]);
 
@@ -19,35 +18,12 @@ function App() {
   const [searchedData, setSearchedData] = useState([]);
 
   useEffect(() => {
-    const fetchDataFunction = async () => {
-      try {
-        const response = await fetch(`https://restcountries.com/v3.1/all`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":
-              "https://restcountryapi-challenge.vercel.app",
-          },
-        });
-        const data = await response.json();
-
-        setData(data);
-        console.log(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
     if (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       document.querySelector("body").classList.add("dark");
     }
-
-    return () => {
-      fetchDataFunction();
-    };
   }, []);
 
   return (
@@ -58,12 +34,12 @@ function App() {
           <DetailsPage
             setShowDetails={setShowDetails}
             detailData={detailData}
-            fullData={data}
+            fullData={countryDatas}
           />
         ) : (
           <section>
             <QueryDiv
-              data={data}
+              data={countryDatas}
               activeOption={activeOption}
               setActiveOption={setActiveOption}
               isFiltered={isFiltered}
@@ -83,7 +59,7 @@ function App() {
                   ? searchedData
                   : searchValue === "" && isFiltered
                   ? filteredData
-                  : data
+                  : countryDatas
               }
             />
           </section>
