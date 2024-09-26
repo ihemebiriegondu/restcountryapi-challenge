@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://github.com/ihemebiriegondu/restcountryapi-challenge.git
+- Solution URL: https://www.frontendmentor.io/solutions/reactjs-css-custom-properties-flexbox-css-grid-RfJfAsgw26
 - Live Site URL: https://restcountryapi-challenge.vercel.app/
 
 ## My process
